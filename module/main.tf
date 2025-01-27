@@ -6,6 +6,16 @@ terraform {
   }
 }
 
+provider "azurerm" {
+  features {}
+  subscription_id = var.environment_id
+}
+provider "azurerm" {
+  features {}
+  alias           = "secnet"
+  subscription_id = "27f42ee3-dc20-4595-9449-a8b3f88c47" # Used to retrieve data from other subscription
+}
+
 module "rg" {
   source = "git@github.com:Seyfor-CSC/mit.resource-group.git?ref=v2.0.0"
   config = [
