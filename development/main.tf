@@ -21,7 +21,6 @@ provider "azurerm" {
 }
 
 module "solution" {
-  source         = "../module"
-  environment_id = "c813f663-9930-455f-9450-d0acf61942d9"
-  name           = "dir-dev"
+  source = "../module"
+  config = local.config
 }

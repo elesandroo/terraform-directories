@@ -1,6 +1,10 @@
-variable "name" {
-  type = string
-}
-variable "environment_id" {
-  type = string
+variable "config" {
+    type = object({
+      name = string
+      environment_id = string
+        vm = object({
+            name = string
+            size = optional(string, "Standard_F2")
+        }) 
+    })
 }
